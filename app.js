@@ -1,18 +1,26 @@
 import { useEffect } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { View, Text } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
-export default function App() {
-  useEffect(() => {
-    SplashScreen.preventAutoHideAsync(); // evita que se oculte el splash screen de forma predeterminada
-    setTimeout(() => {
-      SplashScreen.hideAsync(); // oculta después de 2s
-    }, 2000);
-  }, []);
+
+SplashScreen.preventAutoHideAsync();
+
+export default function App() { useEffect(() => { 
+  SplashScreen.preventAutoHideAsync(); // evita que se oculte el splash screen de forma predeterminada 
+  setTimeout(() => {
+     SplashScreen.hideAsync(); // oculta después de 2s 
+  }, 2000); }, []);
+
+  
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Aqui puedes agregar un componente de React (puedes crear un componente separado o mover el codigo creado en clase anterior e importarlo en la sección de arriba) </Text>
-    </View>
-  );
+  <LinearGradient
+    colors={["#4c669f", "#3b5998", "#192f6a"]}
+    style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+  >
+    <Text style={{ color: "white" }}>Pokemon ...</Text>
+  </LinearGradient>
+);
+
 }
